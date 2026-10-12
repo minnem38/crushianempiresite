@@ -5,11 +5,18 @@ const router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', { title: 'The Crushian Empire' });
 });
-router.get('/app', function(req, res) {
+router.get('/app', async function (req, res) {
     if (!req.cookies.access_token) {
         res.redirect(process.env.URL);
     } else {
-        res.render('app', { title: 'The Crushian Empire' });
+        const userFetch = await fetch('https://discord.com/api/users/@me', {
+            headers: {
+                'Authorization': `Bearer ${req.cookies.access_token}`
+            }
+        });
+        const data = await userFetch.json();
+        const username = data.global_name;
+        res.render('app', {title: 'The Crushian Empire', username: username});
     }
 })
 module.exports = router;

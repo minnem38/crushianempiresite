@@ -4,6 +4,7 @@ body {
     color: white;
     display: flex;
     margin: 0;
+    flex-direction: column;
 }
 img {
     max-height: 9vh;
@@ -18,6 +19,9 @@ img {
 }
 #left {
     align-self: flex-start;
+}
+#middle {
+    align-self: center;
 }
 #right {
     align-self: flex-end;
