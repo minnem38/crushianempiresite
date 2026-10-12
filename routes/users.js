@@ -25,6 +25,6 @@ router.get('/discord', async function (req, res) {
     res.cookie('access_token', token, {
         httpOnly: true
     });
-    res.redirect('http://localhost:3000/');
+    res.redirect('http://localhost:3000/app');
 });
 module.exports = router;
