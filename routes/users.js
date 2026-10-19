@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const { APP_URL, DISCORD_ID, DISCORD_STATE_SECRET } =
-    process.env;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -17,14 +15,15 @@ router.get('/discord', async function (req, res) {
             'client_secret': process.env.CLIENT_SECRET,
             'grant_type': 'authorization_code',
             'code': req.query.code,
-            'redirect_uri': 'http://localhost:3000/auth/discord'
+            'redirect_uri': 'https://crushianempire.duckdns.org/auth/discord'
         })
     });
     const data = await response.json();
     const token = data.access_token
     res.cookie('access_token', token, {
-        httpOnly: true
+        httpOnly: true,
+        secure: true
     });
-    res.redirect('http://localhost:3000/app');
+    res.redirect('/app');
 });
 module.exports = router;
