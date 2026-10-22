@@ -1,25 +1,24 @@
 body {
-    font: 1vw "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: #242429;
     color: white;
     display: flex;
     margin: 0;
     flex-direction: column;
 }
-
+.container {
+    margin: 1.5rem;
+}
 .bar {
     border-bottom: 2px solid #454545;
     display: grid;
-    margin: 1vh;
-    padding: 1vh;
+    padding: 1rem;
     grid-template-columns: 1fr auto 1fr;
 }
 #left {
-    object-fit: contain;
-    object-position: left center;
-    height: 5.5vw;
-    margin: 3vw;
+    max-width: 15%;
     align-items: center;
+    margin: 1rem;
 }
 #middle {
     align-self: center;
@@ -31,9 +30,36 @@ body {
 #right {
     border: #454545 solid 1px;
     border-radius: 8px;
-    margin: 3vw;
-    height: 10%;
-    width: 10vw;
+    max-height: 15%;
+    color: white;
+    text-decoration: none;
     align-self: center;
     justify-self: end;
+    align-content: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    transition: background-color 0.2s;
+}
+#right:hover {
+    background-color: #636363;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    border-radius: 0.75rem;
+    border: 2px solid #454545;
+    padding: 2rem;
+
+}
+
+@media screen and (width <= 1024px) {
+    body {
+        font: 0.5rem "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+    #left {
+        max-width: 40%;
+    }
 }
