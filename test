@@ -4,3 +4,4 @@ attempt: 2, last one failed cuz I forgot to execute the n8n workflow
 attempt: 3, last one was a success, but there was no logic
 attempt: 4, still adding logic
 attempt: 5, forgot to change the url
+attempt: 6, we gettin somewhere
