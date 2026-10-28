@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+require('dotenv').config();
 
 router.get('/', async function (req, res) {
     if (!req.cookies.access_token || req.cookies.access_token === 'undefined' || req.cookies.access_token === 'Undefined' || req.cookies.access_token === '') {
