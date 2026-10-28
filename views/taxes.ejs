@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../stylesheets/app.css">
+    <title><%= title %></title>
+</head>
+<body>
+<div class="bar">
+    <img id="left" src="/images/flags/flag-4x3.png" alt="Flag of the Crushian Empire">
+    <h1 id="middle"><%= title %></h1>
+    <a id="right" href="/logout">Log Out</a>
+</div>
+<div class="container">
+    <div class="screen">
+        <h1>Hello <%= username %>!</h1>
+        <ul>
+            <li>Welcome to the Crushian Empire Taxing page.</li>
+            <li>Taxes are 2 iron coins a month.</li>
+            <li>Go to the bank at Leto and buy a tax code.</li>
+            <li>You can then type it into the form below.</li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="screen">
+        <h1>Tax Form</h1>
+        <form action="../taxes" method="POST">
+            <input type="text" name="code" id="code" placeholder="Enter Tax Code">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>

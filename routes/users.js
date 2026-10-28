@@ -2,12 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.send("that's not a valid url");
 });
 
 router.get('/discord', async function (req, res) {
-    console.log(req.query.code);
     const response = await fetch('https://discord.com/api/oauth2/token', {
         method: 'POST',
         body: new URLSearchParams({

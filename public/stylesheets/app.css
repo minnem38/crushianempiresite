@@ -52,9 +52,18 @@ body {
     border-radius: 0.75rem;
     border: 2px solid #454545;
     padding: 2rem;
-
 }
 
+.screen input {
+    min-width: 30%;
+    height: 3rem;
+    margin: 1rem 0;
+    background-color: #242429;
+    color: white;
+    text-align: center;
+    border: 2px solid #454545;
+    border-radius: 0.75rem;
+}
 @media screen and (width <= 1024px) {
     body {
         font: 0.5rem "Lucida Grande", Helvetica, Arial, sans-serif;
