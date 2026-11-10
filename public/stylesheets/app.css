@@ -72,3 +72,16 @@ body {
         max-width: 40%;
     }
 }
+.button {
+    border: #454545 solid 1px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0.5rem;
+    transition: background-color 0.2s;
+    width: fit-content;
+}
+.button:hover {
+    background-color: #636363;
+}
