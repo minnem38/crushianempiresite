@@ -2,20 +2,19 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script type="text/javascript" src="/javascripts/index.js"></script>
+    <link rel='stylesheet' href='/stylesheets/app.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <button id="button-discord">Login to dashboard</button>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const discordButton = document.getElementById("button-discord");
-            discordButton.addEventListener("click", () => {
-                window.location.href = "/app";
-            });
-        });
-    </script>
+  <div class="bar">
+      <img id="left" src="/images/flags/flag-4x3.png" alt="Flag of the Crushian Empire">
+      <h1 id="middle"><%= title %></h1>
+      <a id="right" href="/app">Log in with Discord</a>
+  </div>
+  <div class="container">
+      <div class="screen">
+          <h1>Welcome to the Crushian Empire</h1>
+      </div>
+  </div>
   </body>
 </html>
