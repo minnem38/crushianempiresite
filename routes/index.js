@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require("fs/promises");
 const router = express.Router();
+const bot = require("../bot");
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -49,5 +50,8 @@ router.post('/taxes', async function (req, res) {
             }
         }
     }
+})
+router.post('/post-trade', async function (req, res) {
+    bot.sendMessage(process.env.CHANNEL, req.body.message);
 })
 module.exports = router;

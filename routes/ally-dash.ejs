@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <title><%= title %></title>
+</head>
+<body>
+<div class="bar">
+    <img id="left" src="/images/flags/flag-4x3.png" alt="Flag of the Crushian Empire">
+    <h1 id="middle"><%= title %></h1>
+    <a id="right" href="/logout">Log Out</a>
+</div>
+<div class="container">
+    <div class="screen">
+        <h1>Hello <%= username %>!</h1>
+        <p>Welcome to the Crushian Empire</p>
+    </div>
+</div>
+<div class="container">
+    <div class="screen">
+        <nav>
+            <a class="button" href="app/tradedeals">Propose a trading deal</a>
+        </nav>
+    </div>
+</div>
+</body>
+</html>

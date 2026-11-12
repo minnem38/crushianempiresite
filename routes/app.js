@@ -62,4 +62,30 @@ router.get('/taxes', async function (req, res) {
         }
     }
 })
+router.get('/tradedeals', async function (req, res) {
+    if (!req.cookies.access_token || req.cookies.access_token === 'undefined' || req.cookies.access_token === 'Undefined' || req.cookies.access_token === '') {
+        res.redirect(process.env.URL);
+    } else {
+        const userFetch = await fetch('https://discord.com/api/users/@me', {
+            headers: {
+                'Authorization': `Bearer ${req.cookies.access_token}`
+            }
+        });
+        const data = await userFetch.json();
+        const username = data.global_name;
+        const discordId = data.id;
+
+        async function getUser(discordId) {
+            const raw = await fs.readFile('./users.json', 'utf8');
+            const data = JSON.parse(raw);
+            return data.Users.find((user) => String(user.discordId) === String(discordId));
+        }
+        const user = await getUser(discordId)
+        if (user.role === "ally") {
+            res.render('tradedeals', {title: 'The Crushian Empire', username: username});
+        } else {
+            res.redirect('/app');
+        }
+    }
+})
 module.exports = router;
