@@ -71,6 +71,12 @@ body {
     #left {
         max-width: 40%;
     }
+    .inline-div img {
+        max-width: 20%;
+    }
+    .inline-div {
+        font-size: 1.2rem;
+    }
 }
 .button {
     border: #454545 solid 1px;
@@ -80,8 +86,24 @@ body {
     padding: 1rem;
     margin: 0.5rem;
     transition: background-color 0.2s;
-    width: fit-content;
+    width: 30%;
+    text-align: center;
 }
 .button:hover {
     background-color: #636363;
+}
+.inline-div {
+    display: flex;
+    flex-direction: row;
+    margin: 3rem 0;
+}
+.inline-div img {
+    padding: 0 10rem;
+    align-self: end;
+    justify-self: end;
+}
+.screen nav {
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
 }

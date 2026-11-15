@@ -15,6 +15,7 @@ router.get('/', async function (req, res) {
         });
         const data = await userFetch.json();
         const username = data.global_name;
+        const discordId = data.id;
         const isMember = await bot.userHasRole(
             process.env.GUILD_ID,
             discordId,

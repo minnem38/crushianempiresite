@@ -5,7 +5,11 @@ const bot = require("../bot");
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'The Crushian Empire' });
+    if (!req.cookies.access_token || req.cookies.access_token === 'undefined' || req.cookies.access_token === 'Undefined' || req.cookies.access_token === '') {
+        res.render('index', { title: 'The Crushian Empire', righttext: 'Login with Discord' });
+    } else {
+        res.render('index', { title: 'The Crushian Empire', righttext: 'Go to app dashboard' });
+    }
 });
 router.get('/logout', function (req, res) {
     res.clearCookie('access_token');
